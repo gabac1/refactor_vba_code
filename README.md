@@ -106,9 +106,9 @@ For the original code, the time used is 0.4941406s.
 ![alt text](https://github.com/gabac1/refactor_vba_code/blob/main/VBA_Challenge_2018.PNG)
 For the original code, the time used is 0.5039063s.
 ## Summary
-In general, the refactoring process would make the original code to be more concise and efficient, but one bad thing is obviously that extra effort has to be made on changing an already working program. Also, by changing the design of the original code, some unexpected problems may occur when applying the code on different data.
+In general, the refactoring process would make the original code more concise and efficient, but one bad thing is obviously that extra effort has to be made on changing an already working program. Also, by changing the design of the original code, some unexpected problems may occur when applying the code on different data.
 For this project, the benefit of the refactoring is that the code runs faster, but it may also give rise to some potential problems.
-For the original code of this project, the checking of start and end price would only work when the data is sorted by ticker and time. However, the method for the aggregation of volume would also work even on shuffled data. After refactoring, the code for volume would only work when the data is sorted as well. (In fact, the code can run even faster when ticker array is removed for the starting price and ending price search. Instead, simply checking for whether the previous or following ticker is the same as the current ticker would work:
+For the original code of this project, the checking of start and end price would only work when the data is already sorted by ticker and time. However, the method for the aggregation of volume would also work even on shuffled data. After refactoring, the code for volume would only work when the data is sorted as well. (In fact, the code can run even faster when ticker array is removed for the starting price and ending price search. Instead, simply checking for whether the previous or following ticker is the same as the current ticker would work:
 ```
         If Cells(i, 1).Value <> Cells(i - 1, 1).Value Then
             tickerStartingPrices(tickerIndex) = Cells(i, 6).Value
