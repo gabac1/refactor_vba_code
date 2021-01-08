@@ -39,7 +39,7 @@ A refactoring was done on the code used for this analysis. In the original code,
 
    Next i
 ```
-The refactored code, on the other hand, does not check the ticker when calculating aggregated volume for each stock, rather, the ticker index is changed when the end of each stock’s data is reached, and the aggregating process would simply move on to the next stock. Also, the outputs of the loop are held in several arrays (tickers, tickerVolumes, tickerEndingPrices, tickerStartingPrices) before the final results on the sheet are derived from them:
+The refactored code, on the other hand, does not check the ticker when calculating aggregated volume for each stock. Rather, the ticker index is changed when the end of each stock’s data is reached, and the aggregating process would simply move on to the next stock. Also, the outputs of the loop are held in several arrays (tickers, tickerVolumes, tickerEndingPrices, tickerStartingPrices) before the final results on the sheet are derived from them:
 ```
     For i = 2 To RowCount
         ticker = tickers(tickerIndex)
@@ -125,4 +125,4 @@ For the original code of this project, the checking of start and end price would
             tickerIndex = tickerIndex + 1
         End If
 ```
-) The original code might be less “clever”, but the straight forward logic of it can lead to higher adaptability under various scenarios.
+) The original code might be less “clever”, but the straightforward logic of it can lead to higher adaptability under various scenarios.
